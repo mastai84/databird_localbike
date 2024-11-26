@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name : mrt_operations__customers_order_summary
+    description: |
+      This model aggregates customer order data from the `int_bike_database__orders` table.
+      
+      It provides key metrics for each customer, including the number of orders, total and average 
+      order amounts.
+    columns:
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+      - name: total_order_amount
+        description: 
+          Total order amount for the customer  
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+              
+      - name: average_order_amount  
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+
+      
+      - name: total_item_ordered_quantity  
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
