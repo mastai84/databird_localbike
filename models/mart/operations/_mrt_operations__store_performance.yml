@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mrt_operations__store_performance
+    description: '{{ doc("mrt_operations__store_performance") }}'
