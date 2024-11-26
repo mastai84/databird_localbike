@@ -1,10 +1,3 @@
-select
-        product_id,
-        product_name,
-        brand_id,
-        category_id,
-        model_year,
-        list_price
+select product_id, product_name, brand_id, category_id, model_year, list_price
 
-    from from {{ source('databird_localbike', 'products') }}
-
+from {{ source("databird_localbike", "products") }}
