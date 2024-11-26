@@ -7,6 +7,6 @@ select
         phone as staff_phone,
         active as staff_active,
         store_id,
-        case when manager_id = 'NULL' then null else manager_id end as manager_id
+        case when manager_id = 'NULL' then null else cast(manager_id as int) end as manager_id
 
 from {{ source('databird_localbike', 'staffs') }}
