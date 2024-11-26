@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: databird_localbike
+    schema: databird_localbike_csv
+    tables:
+      - name: brands
+      - name: categories
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: staffs
+      - name: stocks
+      - name: stores
